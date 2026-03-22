@@ -40,7 +40,9 @@ I prioritized **Hardware Certainty** over **Network Dependency**. [cite_start]By
 
 ## 📂 Project Structure
 **`/admin-dashboard`**: Python (Tkinter) central monitor for property managers[cite: 8, 10].
+
 **`/user-portal`**: Responsive HTML5/Tailwind entry point for residents[cite: 10].
+
 **`/cloud-backend`**: Google Apps Script logic for validation and hardware triggering.
 
 ---
