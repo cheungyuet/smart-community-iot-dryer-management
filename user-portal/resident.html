@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BNE Dryer Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        input:focus, select:focus { outline: none; border-color: #1e3a8a; }
+        /* Prevent iOS from zooming on focus */
+        select, input { font-size: 16px !important; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-start justify-center p-2 sm:p-4">
+    <div class="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden border-t-8 border-blue-900 mt-2">
+        <div class="p-4 bg-blue-900 text-white text-center">
+            <h1 class="text-lg font-bold italic">BNE COMMUNITY DRYER</h1>
+            <p class="text-[10px] opacity-70">Brisbane, QLD | 06:00 - 21:00 Only</p>
+        </div>
+
+        <form id="dryerForm" class="p-5 space-y-3">
+            <div>
+                <label class="block text-xs font-bold text-gray-700 mb-1">Block</label>
+                <select id="block" class="w-full border-2 rounded-lg p-2 bg-gray-50 focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Select a Block</option>
+                    <script>
+                        ['A','B','C','D','E','F','G','H'].forEach(b => {
+                            document.write(`<option value="Block ${b}">Block ${b}</option>`);
+                        });
+                    </script>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-gray-700 mb-1">Unit</label>
+                <select id="unit" class="w-full border-2 rounded-lg p-2 bg-gray-50 focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Select a Unit</option>
+                    <script>
+                        for(let i=1; i<=6; i++) {
+                            document.write(`<option value="${i}">Unit ${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold text-gray-700 mb-1">Dryer No.</label>
+                <select id="dryerId" class="w-full border-2 rounded-lg p-2 bg-gray-50 focus:ring-2 focus:ring-blue-500" required>
+                    <option value="">Select a Dryer</option>
+                    <script>
+                        for(let i=1; i<=8; i++) {
+                            document.write(`<option value="D0${i}">D0${i}</option>`);
+                        }
+                    </script>
+                </select>
+            </div>
+
+            <div class="pt-1">
+                <label class="block text-xs font-bold text-red-800 mb-1">Access Code</label>
+                <input type="password" id="accessCode" inputmode="numeric" pattern="[0-9]*" maxlength="6" 
+                       class="w-full border-2 border-red-100 rounded-lg p-2 bg-red-50 focus:ring-2 focus:ring-red-500" 
+                       placeholder="6-digit code" required>
+            </div>
+
+            <button type="submit" id="submitBtn" class="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-extrabold py-3 rounded-xl transition shadow-lg mt-4 active:scale-95">
+                Submit Usage Registration
+            </button>
+        </form>
+
+        <div id="msg" class="px-5 pb-5 text-center font-medium min-h-[30px] text-sm"></div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxsXRUYwMQFGBeY7Qn5YAhyseDDOkDs47qNgsrH_DFOqrX9T6f-Z6iLBw9QP3B2Hp4M/exec';
+
+        document.getElementById('dryerForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const msg = document.getElementById('msg');
+            const btn = document.getElementById('submitBtn');
+            msg.innerText = "Submitting...";
+            btn.disabled = true;
+
+            const payload = {
+                block: document.getElementById('block').value,
+                unit: document.getElementById('unit').value,
+                dryerId: document.getElementById('dryerId').value,
+                accessCode: document.getElementById('accessCode').value
+            };
+
+            try {
+                await fetch(SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(payload)
+                });
+
+                msg.className = "px-5 pb-5 text-center text-green-600 font-bold";
+                msg.innerText = "✅ Registration Successful!";
+                document.getElementById('dryerForm').reset();
+            } catch (err) {
+                msg.innerText = "❌ Submission Failed, please try again.";
+            } finally {
+                btn.disabled = false;
+            }
+        };
+    </script>
+</body>
+</html>
