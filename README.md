@@ -22,7 +22,9 @@ This project provides an end-to-end IoT solution for a **48-unit residential com
 
 ## 💎 Business Value & Operational Impact
 **💰 Zero OPEX Strategy:** Engineered the entire infrastructure using **Google Apps Script (GAS)** and **Netlify**, achieving a high-availability platform with **$0 monthly server costs**.
+
 **⚡ 100% Billing Automation:** Eliminated manual auditing by automating usage logs into Google Sheets, enabling instant weekly/monthly financial forecasting.
+
 **🔒 Security by Design:** Implemented a **6-digit Access Code Matrix** and backend **time-fence logic (06:00-21:00)** to strictly prevent system misuse and unauthorized API triggers.
 
 ---
@@ -34,6 +36,7 @@ I prioritized **Hardware Certainty** over **Network Dependency**. [cite_start]By
 
 ### 2. Scalable Data Management
 **Centralized Logging:** All transactions are handled via a RESTful API (GAS) that syncs directly with a Google Sheet "Logs" database[cite: 8, 9, 10].
+
 **Secure Admin Access:** The Python-based dashboard uses **GCP Service Account (JSON)** for secure, server-side data retrieval, keeping management functions isolated from public access[cite: 8, 9].
 
 ---
