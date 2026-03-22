@@ -4,58 +4,46 @@
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Web-blue.svg)]()
 [![Hardware](https://img.shields.io/badge/Hardware-Sonoff%20%7C%20eWeLink-orange.svg)]()
 
-> **"Turning unauthorized utility usage into an automated, data-driven management tool."**
+> **"Transforming unauthorized utility usage into a self-sustaining, zero-cost management ecosystem."**
 
-[cite_start]This end-to-end IoT solution was designed for a **48-unit residential community in Brisbane** to solve the pain points of "utility theft" (unauthorized usage) and the lack of cost-tracking transparency in shared laundry facilities. 
+[cite_start]This project provides an end-to-end IoT solution for a **48-unit residential community in Brisbane** to resolve long-standing issues with unauthorized utility usage and manual billing overhead.
 
 ---
 
-## 📸 System Preview
-| User Portal (Mobile) | Admin Dashboard (Windows) |
+## 📸 System Architecture & Interface
+
+
+| Resident Portal (Mobile-First) | Admin Central Monitor (Windows) |
 |---|---|
-| [Insert your resident.html screenshot here] | [Insert your Python app screenshot here] |
-| *Residents register their usage via smartphone.* | *Management monitors live status & overrides power.* |
+| ![Mobile View](https://via.placeholder.com/300x500?text=Resident+Portal+Screenshot) | ![Admin View](https://via.placeholder.com/500x300?text=Python+Admin+Dashboard+Screenshot) |
+| [cite_start]*Residents register via `resident.html` [cite: 10]* | [cite_start]*Live monitoring via `dryer_central_manager3.py` [cite: 8]* |
 
 ---
 
-## 🎯 Business Value & Impact
-* **💰 Zero Operational Expenditure (OPEX):** Engineered a high-availability infrastructure using **Serverless (GAS)** and **Netlify** to achieve **Zero-cost maintenance**. [cite_start]No server rental fees, ever. [cite: 61, 72]
-* [cite_start]**⏰ 100% Automation in Finance:** Transformed a manual 2-hour monthly cost-tracking task into an instant, "Zero-second" automated data generation process. [cite: 67, 74]
-* [cite_start]**🔒 Eliminated Misuse:** Prevented unauthorized API calls and system misuse through a custom 6-digit access code matrix and strict time-fence logic (06:00 - 21:00). [cite: 63, 64]
+## 💎 Business Value & Operational Impact
+* [cite_start]**💰 Zero OPEX Strategy:** Engineered the entire infrastructure using **Google Apps Script (GAS)** and **Netlify**, achieving a high-availability platform with **$0 monthly server costs**.
+* [cite_start]**⚡ 100% Billing Automation:** Eliminated manual auditing by automating usage logs into Google Sheets, enabling instant weekly/monthly financial forecasting.
+* [cite_start]**🔒 Security by Design:** Implemented a **6-digit Access Code Matrix** and backend **time-fence logic (06:00-21:00)** to strictly prevent system misuse and unauthorized API triggers.
 
 ---
 
-## 🛠️ The Technical "Moat" (Why it works better)
+## 🛠️ The Technical "Moat" (Engineering Excellence)
 
 ### 1. Hardware-Level Reliability (Inching Mode)
-Unlike fragile cloud-based software timers, I utilized **Inching Mode** technology on the IoT hardware level.
-* **The Result:** Even if the internet drops, the dryer **will accurately cut power after 3 hours**. [cite_start]Hardware certainty > Network dependency. [cite: 65, 66, 73]
+I prioritized **Hardware Certainty** over **Network Dependency**. [cite_start]By utilizing the IoT device's **Inching Mode** for the 3-hour timer, the dryer is guaranteed to cut power physically even if the local Wi-Fi or cloud connection drops mid-cycle.
 
-### 2. High-Performance Admin Dashboard (Python)
-A Windows-based management tool built with Python to provide real-time visibility.
-* [cite_start]**Features:** Real-time monitoring, manual remote power overrides, and direct secure integration with Google Sheets API via GCP Service Account. [cite: 58, 69]
-
-### 3. Lightweight User Portal (Web)
-[cite_start]A mobile-first entry point built with **Tailwind CSS** and **Vanilla JS** for maximum compatibility across all resident smartphones. [cite: 56]
-
----
-
-## 🏗️ System Architecture
-
-1.  **User Entry:** Resident registers via `resident.html`.
-2.  [cite_start]**Validation:** Google Apps Script checks credentials and current time. [cite: 63, 64]
-3.  [cite_start]**Logging:** Valid entries are written to a secure Google Sheet. [cite: 67]
-4.  [cite_start]**Hardware Trigger:** IFTTT Webhooks trigger the Sonoff physical switches. [cite: 59]
-5.  [cite_start]**Admin Monitor:** Management views live activity and controls power via the Python Dashboard. [cite: 69]
+### 2. Scalable Data Management
+* [cite_start]**Centralized Logging:** All transactions are handled via a RESTful API (GAS) that syncs directly with a Google Sheet "Logs" database[cite: 8, 9, 10].
+* [cite_start]**Secure Admin Access:** The Python-based dashboard uses **GCP Service Account (JSON)** for secure, server-side data retrieval, keeping management functions isolated from public access[cite: 8, 9].
 
 ---
 
 ## 📂 Project Structure
-```text
-├── /admin-dashboard     # Python (Tkinter) Windows management tool
-├── /user-portal          # Responsive Web interface (deployed on Netlify)
-├── /cloud-backend       # Google Apps Script (Logic & API)
-└── README.md
+* [cite_start]**`/admin-dashboard`**: Python (Tkinter) central monitor for property managers[cite: 8, 10].
+* [cite_start]**`/user-portal`**: Responsive HTML5/Tailwind entry point for residents[cite: 10].
+* [cite_start]**`/cloud-backend`**: Google Apps Script logic for validation and hardware triggering.
 
-⚖️ License
-Copyright (c) 2026. All Rights Reserved. (Private/Commercial Project)
+---
+
+## ⚖️ License
+Copyright (c) 2026. All Rights Reserved. (Private/Commercial Project) [cite_start][cite: 1, 2]
