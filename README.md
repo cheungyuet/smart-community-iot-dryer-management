@@ -6,7 +6,7 @@
 
 > **"Transforming unauthorized utility usage into a self-sustaining, zero-cost management ecosystem."**
 
-[cite_start]This project provides an end-to-end IoT solution for a **48-unit residential community in Brisbane** to resolve long-standing issues with unauthorized utility usage and manual billing overhead.
+This project provides an end-to-end IoT solution for a **48-unit residential community in Brisbane** to resolve long-standing issues with unauthorized utility usage and manual billing overhead.
 
 ---
 
@@ -21,9 +21,9 @@
 ---
 
 ## 💎 Business Value & Operational Impact
-* [cite_start]**💰 Zero OPEX Strategy:** Engineered the entire infrastructure using **Google Apps Script (GAS)** and **Netlify**, achieving a high-availability platform with **$0 monthly server costs**.
-* [cite_start]**⚡ 100% Billing Automation:** Eliminated manual auditing by automating usage logs into Google Sheets, enabling instant weekly/monthly financial forecasting.
-* [cite_start]**🔒 Security by Design:** Implemented a **6-digit Access Code Matrix** and backend **time-fence logic (06:00-21:00)** to strictly prevent system misuse and unauthorized API triggers.
+**💰 Zero OPEX Strategy:** Engineered the entire infrastructure using **Google Apps Script (GAS)** and **Netlify**, achieving a high-availability platform with **$0 monthly server costs**.
+**⚡ 100% Billing Automation:** Eliminated manual auditing by automating usage logs into Google Sheets, enabling instant weekly/monthly financial forecasting.
+**🔒 Security by Design:** Implemented a **6-digit Access Code Matrix** and backend **time-fence logic (06:00-21:00)** to strictly prevent system misuse and unauthorized API triggers.
 
 ---
 
@@ -33,15 +33,15 @@
 I prioritized **Hardware Certainty** over **Network Dependency**. [cite_start]By utilizing the IoT device's **Inching Mode** for the 3-hour timer, the dryer is guaranteed to cut power physically even if the local Wi-Fi or cloud connection drops mid-cycle.
 
 ### 2. Scalable Data Management
-* [cite_start]**Centralized Logging:** All transactions are handled via a RESTful API (GAS) that syncs directly with a Google Sheet "Logs" database[cite: 8, 9, 10].
-* [cite_start]**Secure Admin Access:** The Python-based dashboard uses **GCP Service Account (JSON)** for secure, server-side data retrieval, keeping management functions isolated from public access[cite: 8, 9].
+**Centralized Logging:** All transactions are handled via a RESTful API (GAS) that syncs directly with a Google Sheet "Logs" database[cite: 8, 9, 10].
+**Secure Admin Access:** The Python-based dashboard uses **GCP Service Account (JSON)** for secure, server-side data retrieval, keeping management functions isolated from public access[cite: 8, 9].
 
 ---
 
 ## 📂 Project Structure
-* [cite_start]**`/admin-dashboard`**: Python (Tkinter) central monitor for property managers[cite: 8, 10].
-* [cite_start]**`/user-portal`**: Responsive HTML5/Tailwind entry point for residents[cite: 10].
-* [cite_start]**`/cloud-backend`**: Google Apps Script logic for validation and hardware triggering.
+**`/admin-dashboard`**: Python (Tkinter) central monitor for property managers[cite: 8, 10].
+**`/user-portal`**: Responsive HTML5/Tailwind entry point for residents[cite: 10].
+**`/cloud-backend`**: Google Apps Script logic for validation and hardware triggering.
 
 ---
 
