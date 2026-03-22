@@ -15,7 +15,7 @@ This project provides an end-to-end IoT solution for a **48-unit residential com
 
 | Resident Portal (Mobile-First) | Admin Central Monitor (Windows) |
 |---|---|
-| (<img width="375" height="661" alt="image" src="https://github.com/user-attachments/assets/1dfaac28-8444-4754-910b-3e9d6177073f"/>) | (<img width="643" height="574" alt="image" src="https://github.com/user-attachments/assets/a3f3608a-ea6c-47e0-a1cf-db7c3a2f4b8c"/>) |
+| <img width="375" height="661" alt="image" src="https://github.com/user-attachments/assets/1dfaac28-8444-4754-910b-3e9d6177073f"/> | <img width="643" height="574" alt="image" src="https://github.com/user-attachments/assets/a3f3608a-ea6c-47e0-a1cf-db7c3a2f4b8c"/> |
 | [cite_start]*Residents register via `resident.html` [cite: 10]* | [cite_start]*Live monitoring via `dryer_central_manager3.py` [cite: 8]* |
 
 ---
